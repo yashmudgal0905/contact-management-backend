@@ -1,5 +1,7 @@
 const express = require("express");
-const Contact = require("../models/contact"); // ✅ lowercase contact
+const path = require("path");
+const Contact = require(path.join(__dirname, "..", "models", "contact"));
+
 
 const router = express.Router();
 
