@@ -1,11 +1,10 @@
 const express = require("express");
 const path = require("path");
-const Contact = require(path.join(__dirname, "..", "models", "contact"));
 
+const Contact = require(path.join(__dirname, "..", "models", "contact"));
 
 const router = express.Router();
 
-// POST - add contact
 router.post("/", async (req, res) => {
   try {
     const contact = await Contact.create(req.body);
@@ -15,7 +14,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// GET - all contacts
 router.get("/", async (req, res) => {
   try {
     const contacts = await Contact.find();
